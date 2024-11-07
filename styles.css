@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8a500;
+    color: #000000;
+    padding: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.cart button {
+    background-color: #dfe835;
+    padding: 10px 15px;
+    border: 2px solid #000000;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Membagi area menjadi 6 kolom */
+    gap: 20px; /* Jarak antar produk */
+    margin-top: 20px;
+}
+
+.product {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #000000;
+    padding: 15px;
+    text-align: center;
+    width: 190px;
+}
+
+.product img {
+    width: 75%;
+    height: auto;
+}
+
+button {
+    background-color: #f8a500;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border: 2px solid #000000;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #5ca0e9;
+}
+
+.cart-popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: none;
+}
+
+.cart-popup h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.cart-popup button {
+    background-color: #f8a500;
+    margin-top: 20px;
+}
+
+.logo {
+    width: 100px; /* Ubah nilai ini untuk mengatur lebar logo */
+    height: auto; /* Ini menjaga rasio aspek logo tetap sama */
+}
+.logo2 {
+    width: 130px; /* Ubah nilai ini untuk mengatur lebar logo */
+    height: auto; /* Ini menjaga rasio aspek logo tetap sama */
+}
+
+
+
+.form-container {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+    border-color: #28a745;
+}
+
+.form-container button {
+    width: 100%;
+    background-color: #f8a500;
+    color: #fff;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #5ca0e9;
+}
+
+.form-container p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-container a {
+    color: #2481e6;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+
+#cart-items {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+    .products {
+        grid-template-columns: repeat(4, 1fr); /* 4 produk per baris */
+    }
+}
+
+@media (max-width: 768px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr); /* 2 produk per baris */
+    }
+}
+
+@media (max-width: 480px) {
+    .products {
+        grid-template-columns: 1fr; /* 1 produk per baris */
+    }
+}
+

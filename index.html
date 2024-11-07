@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokopesia</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+
+<body>
+    
+    <header>
+        <img src="assets/logo.png" alt="Logo Tokopesia" class="logo">
+        <h1>Welcome to Tokopesia</h1>
+        <nav>
+            
+        </nav>
+        <div class="cart">
+            <button onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+        </div>
+        
+    </header>
+    <div id="userGreeting"></div>
+
+    <script>
+    // Ambil nama pengguna dari localStorage
+    const username = localStorage.getItem('username');
+    
+    // Jika ada nama pengguna yang tersimpan, tampilkan
+    if (username) {
+        document.getElementById('userGreeting').innerText = `Hello, ${username}!`;
+    } else {
+        document.getElementById('userGreeting').innerText = 'Hello, Guest!';
+    }
+    </script>
+    <div class="products">
+        <!-- Produk 1 -->
+        <div class="product" data-id="1">
+            <img src="assets/sepatu1.png" alt="Product 1">
+            <h2>Sepatu</h2>
+            <p>Price: Rp.899.000</p>
+            <button onclick="addToCart(1, 'Sepatu 1', 899000)">Add to Cart</button>
+        </div>
+        <!-- Produk 2 -->
+        <div class="product" data-id="2">
+            <img src="assets/sepatu2.png" alt="Product 2">
+            <h2>Sepatu</h2>
+            <p>Price: Rp.999.999</p>
+            <button onclick="addToCart(2, 'Sepatu 2', 999999)">Add to Cart</button>
+        </div>
+        <!-- Produk 3 -->
+        <div class="product" data-id="3">
+            <img src="assets/sepatu1.png" alt="Product 3">
+            <h2>Sepatu</h2>
+            <p>Price: Rp.599.000</p>
+            <button onclick="addToCart(3, 'Sepatu 3', 599000)">Add to Cart</button>
+        </div>
+        <!-- Produk 4 -->
+        <div class="product" data-id="4">
+            <img src="assets/hp1.png" alt="Product 4">
+            <h2>Iphone 13</h2>
+            <p>Price: Rp.9.899.000</p>
+            <button onclick="addToCart(4, 'Iphone 13', 9899000)">Add to Cart</button>
+        </div>
+        <!-- Produk 5 -->
+        <div class="product" data-id="5">
+            <img src="assets/sepatu1.png" alt="Product 5">
+            <h2>Sepatu</h2>
+            <p>Price: Rp.600.000</p>
+            <button onclick="addToCart(5, 'Sepatu 4', 600000)">Add to Cart</button>
+        </div>
+        <!-- Produk 6 -->
+        <div class="product" data-id="6">
+            <img src="assets/hp3.png" alt="Product 6">
+            <h2>Iphone 14</h2>
+            <p>Price: Rp.14.899.999</p>
+            <button onclick="addToCart(6, 'Iphone 14', 14899999)">Add to Cart</button>
+        </div>
+        <!-- Produk 7 -->
+        <div class="product" data-id="7">
+            <img src="assets/sepatu1.png" alt="Product 7">
+            <h2>Sepatu</h2>
+            <p>Price: Rp.4.399.999</p>
+            <button onclick="addToCart(7, 'Sepatu 5', 4399999)">Add to Cart</button>
+        </div>
+        <!-- Produk 8 -->
+        <div class="product" data-id="8">
+            <img src="assets/tas2.png" alt="Product 8">
+            <h2>Tas</h2>
+            <p>Price: Rp.300.000</p>
+            <button onclick="addToCart(8, 'Tas', 300000)">Add to Cart</button>
+        </div>
+        <!-- Produk 9 -->
+        <div class="product" data-id="9">
+            <img src="assets/tas2.png" alt="Product 9">
+            <h2>Tas</h2>
+            <p>Price: Rp.539.999</p>
+            <button onclick="addToCart(9, 'Tas 2', 539999)">Add to Cart</button>
+        </div>
+        <!-- Produk 10 -->
+        <div class="product" data-id="10">
+            <img src="assets/hp4.png" alt="Product 10">
+            <h2>ROG</h2>
+            <p>Price: Rp.5.999.999</p>
+            <button onclick="addToCart(10, 'ROG', 5999999)">Add to Cart</button>
+        </div>
+        <!-- Produk 11 -->
+        <div class="product" data-id="11">
+            <img src="assets/hp5.png" alt="Product 11">
+            <h2>Poco</h2>
+            <p>Price: Rp.7.999.999</p>
+            <button onclick="addToCart(11, 'Poco', 7999999)">Add to Cart</button>
+        </div>
+        <!-- Produk 12 -->
+        <div class="product" data-id="12">
+            <img src="assets/hp6.png" alt="Product 12">
+            <h2>Iphone 16</h2>
+            <p>Price: Rp.18.999.999</p>
+            <button onclick="addToCart(12, 'Iphone 16', 18999999)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="cart-popup" id="cart-popup">
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <!-- Cart items will be listed here -->
+        </div>
+        <p>Total: Rp.<span id="total-price">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+        <button onclick="toggleCart()">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
